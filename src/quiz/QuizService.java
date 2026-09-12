@@ -12,8 +12,8 @@ public class QuizService {
     public QuizService() {
     }
 
-    public List<Question> loadQuestions(String fileName) {
-        List<Question> questions = new ArrayList<>();
+    public List<QuestionModel> loadQuestions(String fileName) {
+        List<QuestionModel> questionModels = new ArrayList<>();
         try (BufferedReader br = new BufferedReader(new FileReader(fileName))) {
             String line;
 
@@ -26,8 +26,8 @@ public class QuizService {
 
                     int correctAnswerIndex = Integer.parseInt(parts[5]);
 
-                    Question question = new Question(questionText, answers, correctAnswerIndex);
-                    questions.add(question);
+                    QuestionModel questionModel = new QuestionModel(questionText, answers, correctAnswerIndex);
+                    questionModels.add(questionModel);
 
                 }else{
                     System.out.println("Please fix the Question/Answer set: " + Arrays.toString(parts));
@@ -42,6 +42,6 @@ public class QuizService {
             System.out.println("The index of the answer is not a valid number" + e.getMessage());
         }
 
-        return questions;
+        return questionModels;
     }
 }

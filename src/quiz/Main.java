@@ -1,4 +1,4 @@
-import quiz.Question;
+import quiz.QuestionModel;
 import quiz.QuizService;
 
 public static void main(String[] args) {
@@ -7,8 +7,12 @@ public static void main(String[] args) {
 
     QuizService quiz = new QuizService();
 
-    List<Question> questions = quiz.loadQuestions("questions.csv");
+    List<QuestionModel> questionModels = quiz.loadQuestions("questions.csv");
 
-    System.out.println(questions);
+    int questionNumber = 1;
+    for (QuestionModel questionModel : questionModels){
+        System.out.println("Question number " + questionNumber + ": " + questionModel.getQuestionText());
+        questionNumber++;
+    }
 
 }
