@@ -24,4 +24,7 @@ public class QuestionModel {
     public String getQuestionText(){
         return questionText;
     }
+    public String[] getAnswerOptions(){
+        return answerOptions;
+    }
 }
