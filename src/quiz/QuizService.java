@@ -9,6 +9,9 @@ import java.util.Arrays;
 import java.util.List;
 
 public class QuizService {
+    public QuizService() {
+    }
+
     public List<Question> loadQuestions(String fileName) {
         List<Question> questions = new ArrayList<>();
         try (BufferedReader br = new BufferedReader(new FileReader(fileName))) {

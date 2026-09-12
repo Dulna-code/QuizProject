@@ -1,5 +1,7 @@
 package quiz;
 
+import java.util.Arrays;
+
 public class Question {
     private String questionText;
     private String[] answerOptions;
@@ -11,4 +13,12 @@ public class Question {
         this.correctAnswerIndex = correctAnswerIndex;
     }
 
+    @Override
+    public String toString() {
+        return "Question{" +
+                "questionText='" + questionText + '\'' +
+                ", answerOptions=" + Arrays.toString(answerOptions) +
+                ", correctAnswerIndex=" + correctAnswerIndex +
+                '}';
+    }
 }
