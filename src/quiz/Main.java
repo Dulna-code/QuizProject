@@ -21,6 +21,26 @@ public static void main(String[] args) {
             System.out.println("Answer " + answerNumber +": " + answer);
         answerNumber++;
         }
+        int yourAnswer = 0;
+        while (yourAnswer>4 || yourAnswer<1){
+            System.out.println(" Please enter your answer: ");
+            Scanner input = new Scanner(System.in);
+            yourAnswer = input.nextInt();
+
+            if (yourAnswer > 4 || yourAnswer<1){
+                System.out.println("Please enter a number between 1 and 4.");
+            }
+        }
+        int correctAnswer = questionModel.getCorrectAnswerIndex();
+        if (correctAnswer != yourAnswer){
+            System.out.println("Your answer is incorrect.");
+            System.out.println("Correct answer is : " + correctAnswer + " " + answerOptions[correctAnswer-1]);
+        }else {
+            System.out.println("Your answer is correct.");
+        }
+
+
+
 
     }
 }

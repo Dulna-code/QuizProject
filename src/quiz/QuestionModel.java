@@ -27,4 +27,7 @@ public class QuestionModel {
     public String[] getAnswerOptions(){
         return answerOptions;
     }
+    public int getCorrectAnswerIndex(){
+        return correctAnswerIndex;
+    }
 }
